@@ -17,7 +17,7 @@ def get_birthdays_per_week(users):
         user['birthday'] = user['birthday'].replace(year=start_date.year)
         day = days_name.get(user['birthday'].weekday())
         
-        if day=='Saturday' or day=='Sunday':
+        if day in ('Saturday','Sunday'):
             day='Monday'
        
         if start_date<=user['birthday']<=end_date:
@@ -25,7 +25,9 @@ def get_birthdays_per_week(users):
                 birthdays[day]=[user['name']]
             else:
                 birthdays[day].append(user['name'])
+    print_birthday(birthdays)
     
+def print_birthday(birthdays):
     for day in birthdays.keys():
         result = f'{day}: '
         for name in birthdays[day]:
@@ -36,7 +38,7 @@ users=[
     {'name': 'Yurii', 'birthday': datetime(1990, 11, 15)}, 
     {'name': 'Daria', 'birthday': datetime(1995, 11, 8)},
     {'name': 'Roman', 'birthday': datetime(1990, 4, 2)},
-    {'name': 'Oleksandr', 'birthday': datetime(1992, 11, 7)},
+    {'name': 'Oleksandr', 'birthday': datetime(1992, 11, 11)},
     {'name': 'Iryna', 'birthday': datetime(1998, 11, 11)}, 
     {'name': 'Sofiia', 'birthday': datetime(1998, 11, 14)} 
     ]
