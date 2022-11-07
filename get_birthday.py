@@ -28,11 +28,9 @@ def get_birthdays_per_week(users):
     print_birthday(birthdays)
     
 def print_birthday(birthdays):
-    for day in birthdays.keys():
-        result = f'{day}: '
-        for name in birthdays[day]:
-            result += f'{name}, '
-        print(f'{result[:-2]}')
+    for day, names in birthdays.items():
+        result = f'{day}: {names}'
+        print(result)
 
 users=[    
     {'name': 'Yurii', 'birthday': datetime(1990, 11, 15)}, 
