@@ -1,4 +1,3 @@
-from datetime import date
 from datetime import datetime,timedelta
 def get_birthdays_per_week(users):
     days=[]
